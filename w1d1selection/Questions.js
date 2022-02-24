@@ -1,3 +1,5 @@
+/* eslint-disable*/
+
 let commission;
 const COMMISSION1 = 0.01;
 const COMMISSION2 = 0.02;

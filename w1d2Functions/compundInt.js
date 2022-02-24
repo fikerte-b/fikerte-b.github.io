@@ -1,3 +1,5 @@
+/* eslint-disable*/
+
 /*
 Defining table
 Input : initial amount, annual interest rate, number of years to compund

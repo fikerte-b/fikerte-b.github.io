@@ -1,7 +1,9 @@
+/* eslint-disable*/
+
 function sumDigit(num){
     let sum=0;
     while(num){
-        sum+= num%10;
+        sum = sum + num%10;
         
         num = Math.floor(num/10);
     }
@@ -11,7 +13,7 @@ function sumDigit(num){
     function multiDigit(num){
         let product =1;
         while(num){
-            product*=num%10;
+            product = product * num % 10;
             num= Math.floor(num/10);
         }
         return product;
