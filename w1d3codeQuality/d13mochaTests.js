@@ -64,9 +64,9 @@ describe("isVowel", function () {
    //mocha unit test for compoundInterest
    describe("test of compundInterest", function(){
        it("tests compound interest 110.47", function(){
-           assert.equal(compoundInterest(100,10,1), 110.47130674412968);
+           assert.equal(compoundInterest(100,10,1), 110.47130674412973);
        });
        it("tests compound interest 110.47", function(){
-        assert.equal(compoundInterest(1000,5,10), 16470.0949769028);
+        assert.equal(compoundInterest(1000,5,10), 1647.0094976902828);
     });
    });

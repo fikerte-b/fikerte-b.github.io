@@ -1,6 +1,6 @@
 "use strict";
 /* eslint-disable*/
-module.exports = {isVowel,computeSalesCommission,calcDownpayment,sumDigits,multiDigits,convertFahrenheit,calcDistance };
+module.exports = {isVowel,computeSalesCommission,compoundInterest,calcDownpayment,sumDigits,multiDigits,convertFahrenheit,calcDistance };
 
 function isVowel(character) {
     if (character === "a" || character === "i"
