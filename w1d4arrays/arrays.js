@@ -2,9 +2,9 @@
 
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser
-
-module.exports = { maxOfThree, sum, multiply, findLongestWord, reverseArray,scoreExams, generateArray }; //add all of your function names here that you need for the node mocha tests
 */
+module.exports = { maxOfThree, sum, multiply, findLongestWord, reverseArray,reverseArrayInplace, scoreExams, generateArray }; //add all of your function names here that you need for the node mocha tests
+
 /**
  * 
  * @param {number} num1 is a number
@@ -71,6 +71,21 @@ function reverseArray(arr) {
         result.push(arr[i]);
     }
     return result;
+}
+/**
+ * 
+ * @param {Array} arr  as input
+ * @returns {Array} reverse of the given array
+ */
+function reverseArrayInplace(arr){
+    let temp;
+    for(let i=0; i<arr.length/2; i++){
+        temp = arr[i];
+        arr[i] = arr[arr/length-i-1];
+        arr[arr/length -i-1] = temp;
+    }
+    return arr;
+
 }
 
 
