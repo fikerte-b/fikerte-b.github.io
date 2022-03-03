@@ -3,8 +3,8 @@
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 module.exports = { ucFirst,checkSpam, truncate, extractCurrencyValue, getMaxSubSum, camelize}; //add all of your function names here that you need for the node mocha tests
-*/
 
+*/
 
 function ucFirst(str) {
   let firstUpper = "";
@@ -67,9 +67,9 @@ function getMaxSubSum(arr) {
 
 function camelize(str) {
   let strArray = str.split("-");
-  let resultStr = "";
+  let resultStr = strArray[0];
   for(let i = 1; i < strArray.length; i++){
-    let word = strArray[i].charAt(0).toUpperCase + strArray[i].slice(1);
+    let word = strArray[i].charAt(0).toUpperCase() + strArray[i].slice(1);
     resultStr = resultStr + word;
 
   }
