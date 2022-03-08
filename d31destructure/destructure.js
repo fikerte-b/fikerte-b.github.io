@@ -19,7 +19,7 @@ function destructuringAssignment(user){
 function topSalary(salaries) {
     let topSal = 0;
     let topName = "";
-    if(salaries === {}){
+    if(Object.entries(salaries).length === 0){
         return null;
     }
     for(const [name, salary] of Object.entries(salaries)){
