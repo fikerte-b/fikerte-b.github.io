@@ -1,9 +1,9 @@
 "use strict";
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
-*/
-module.exports = {copyArray, concat, findMin, combineObjs }; //add all of your function names here that you need for the node mocha tests
 
+module.exports = {copyArray, concat, findMin, combineObjs }; //add all of your function names here that you need for the node mocha tests
+*/
 
 /**
  * 
@@ -13,7 +13,7 @@ module.exports = {copyArray, concat, findMin, combineObjs }; //add all of your f
 function copyArray(arr){
     let result = [];
     result = [...arr];
-   return result;
+    return result;
 
 }
 
@@ -26,15 +26,23 @@ function copyArray(arr){
 function concat(arr1, arr2){
     let result = [];
     
-
-
-
+    result = [...arr1,...arr2];
+    return result;
 }
 
+/**
+ * 
+ * @param  {Array} list of  numbers 
+ * @returns {Number} the minimum number from the list
+ */
 function findMin(...numbers) {
+    let result  = numbers.reduce((min, current) => Math.min(min, current), Infinity);
+    return result;
 
 }
 
 function combineObjs(obj1, obj2){
+    let result = { ...obj1,...obj2};
+    return result;
 
 }
