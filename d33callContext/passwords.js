@@ -13,10 +13,10 @@ function askPassword(ok, fail, password) {
     let user = {
         name: "John",
         loginOk(){
-            console.log(`${this.name} logged in`);
+            return `${this.name} logged in`;
         },
         loginFail(){
-            console.log(`${this.name} failed to log in`);
+            return`${this.name} failed to log in`;
         },
     };
 
@@ -54,6 +54,5 @@ let user2 = {
 
 
 
-/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
+/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
 module.exports = {askPassword, user, askPassword2, user2 }; //add all of your function names here that you need for the node mocha tests
-*/
