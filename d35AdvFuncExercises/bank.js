@@ -32,6 +32,7 @@ bank.bankBalance = function () {
     let total = 0;
     for (const trans of transactionsDB) {
         total += this.getBalance(trans.customerId);
+        // total += bank.getBalance(trans.customerId) check it
     }
     return total;
 };

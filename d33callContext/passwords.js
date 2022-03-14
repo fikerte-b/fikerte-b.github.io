@@ -41,10 +41,10 @@ function askPassword2(ok, fail, password) {
 let user2 = {
     name: "John",
         loginOk(){
-            console.log(`${this.name} logged in`);
+            return(`${this.name} logged in`);
         },
         loginFail(){
-            console.log(`${this.name} failed to log in`);
+            return(`${this.name} failed to log in`);
         },
 
 };
