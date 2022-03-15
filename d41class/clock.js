@@ -30,19 +30,20 @@ class Clock {
     }
   
     stop(){
-      clearInterval(this.timer);
+     // clearInterval(this.timer);
+     setTimeout(()=> {clearInterval(this.timer);}, 4000);
     }
   
     start(){
-      let now = new Date().getTime();
-      this.render();
-      this.timer = setInterval(function() {
-        if(new Date().getTime() - now > 5000){
-          clearInterval(this.timer);
-          return;
-        }
-      }, this.render(), 1000);
-      //this.timer = setInterval(() =>this.render(), 1000);
+      // let now = new Date().getTime();
+      // this.render();
+      // this.timer = setInterval(function() {
+      //   if(new Date().getTime() - now > 5000){
+      //     clearInterval(this.timer);
+      //     return;
+      //   }
+      // }, this.render(), 1000);
+      this.timer = setInterval(() =>this.render(), 1000);
       //setTimeout(function(){clearInterval(this.timer);}, 4000);
     }
   
@@ -50,4 +51,4 @@ class Clock {
   
   let clock = new Clock({template: 'h:m:s'});
   clock.start();
- // clock.stop();
+  clock.stop();
