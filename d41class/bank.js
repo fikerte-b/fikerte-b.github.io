@@ -15,6 +15,7 @@ const SavingsAccount = sav.SavingsAccount;
  * bank class to manuplate the accounts
  */
 class Bank{
+    
    
     static nextNumber = 0;
     /**
