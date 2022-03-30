@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(243, 222, 226);
+  }
+  h3 {
+    color: blue;
+  }
+.image{
+    width: 200px;
+    height: 250px;
+
+} 
+div{
+    font-style:italic;
+    color: red;
+}
