@@ -13,3 +13,16 @@ div{
     font-style:italic;
     color: red;
 }
+a{
+  color: peru;
+  text-decoration: none;
+}
+p ::first-letter{
+  font-size: 3em;
+}
+span{
+  color:pink;
+}
+a[target=_blank]:hover{
+  text-decoration: underline ;
+}
