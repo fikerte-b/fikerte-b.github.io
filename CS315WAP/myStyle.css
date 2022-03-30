@@ -21,7 +21,7 @@ p ::first-letter{
   font-size: 3em;
 }
 span{
-  color:pink;
+  color:rgb(22, 197, 80);
 }
 a[target=_blank]:hover{
   text-decoration: underline ;
