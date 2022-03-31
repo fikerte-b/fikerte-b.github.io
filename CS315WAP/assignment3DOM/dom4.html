@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title> Document Inventory</title>
+        <link rel="stylesheet" href="dom.css">
+        <script src="dom.js"></script>
+    </head>
+    <body>
+        <p>Item Name:</p>
+        <input id="name" type="text">
+        <p>Item Category:</p>
+        <input id="category" type="text">
+        <p>Quantity:</p>
+        <input id="qty" type="text">
+
+        <div>
+            <button onclick="addInventory()">Add</button>
+        </div>
+        <table id="tableId">
+          <tr class="row">
+              <th class="column1">Product Name</th>
+              <th class="column2">Category</th>
+              <th class="column3">Quantity</th>
+          </tr>
+          <tr>
+              <td>Computers</td>
+              <td>Digital</td>
+              <td>100</td>
+          </tr>
+          <tr>
+            <td>Magazines</td>
+            <td>Convenience</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>Books</td>
+            <td>Education</td>
+            <td>20</td>
+        </tr>
+        </table>
+        
+    </body>
+</html>
