@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+    .container{
+        
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position:100%;
+        background-color: rgb(219, 230, 241);
+        display: flex;
+        flex-direction: column;
+        gap: 90px;
+        padding: 20px;    
+    }
+    .box1{
+        background-color: black;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .box2{
+        background-color: black;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        
+    }
+    .box3{
+        background-color: black;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .nestedBox1{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .nestedBox2{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+    }
+    .nestedBox3{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+       
+
+    }
+    p{
+        color:white;
+        font-weight: bolder;
+        
+    }
+    input{
+        background-color: rgb(64, 181, 224);
+        color: white;
+        border-radius: 25px;
+        
+    }
+    #logClass1 {
+        padding-right: 75px;  
+    }
+    #logClass2 {
+        padding-right: 75px;  
+    }
+    #logClass3 {
+        padding-left: 75px;  
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class=box1>
+            <p id=""logClass1>LOGOBAKERY</p>
+            <div class="nestedBox1">
+                <p>Home</p>
+                <p>Bar Menu</p>
+                <p>About Us</p>
+            </div>
+            <input type="button" value="Contact">
+        </div>
+        <div class=box2>
+            <div class="nestedBox2">
+                <p>Home</p>
+                <p>Bar Menu</p>
+                <p>About Us</p>
+                <input type="button" value="Contact">
+            </div>
+            <p id="logClass2">LOGOBAKERY</p>
+        </div>
+        <div class=box3>
+            <p  id="logClass3">LOGOBAKERY</p>
+            <div class="nestedBox3">
+                <p>Home</p>
+                <p> Bar Menu</p>
+                <p>About Us</p>
+                <input type="button" value="Contact">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
