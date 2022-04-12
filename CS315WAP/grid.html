@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Assignment</title>
+    <style>
+        .wrapper {
+            background: grey;
+            padding: 50px;
+            width: 100%;
+        }
+        .mainContainer {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr 0.75fr;
+            grid-template-areas: 
+                    "aboutUs latestTweet instagram"
+                    "bottomBar bottomBar bottomBar";
+            padding:70px;
+            background: rgb(36, 35, 35);
+        }
+        .box {
+            padding: 50px;
+        }
+        .aboutUs {
+         grid-area: aboutUs;
+        }
+        .latestTweet {
+            grid-area: latestTweet;
+        }
+        .instagram {
+            grid-area: instagram;
+        }
+        .bottomBar {
+            grid-area: bottomBar;
+            display: flex;
+            align-items:flex-start;
+            justify-content: space-between;
+            border-top: 1px solid gray;
+           
+        }
+        .flexBox{
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+        #colorlibId {
+            font-weight: bolder;
+            padding-left: 75px;
+        }
+        .sendBox{
+            display: flex;
+            /* position:relative; */
+            border:1px solid gray;
+            background-color: rgb(141, 141, 141);
+            border-radius:20px;
+            justify-content: space-between;
+        }
+        .tweets {
+            display: grid;
+            grid-template-columns: 1fr 6fr;
+            font-style: italic;
+
+        }
+        .instagramImages {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap:5px;
+        }
+       .image {
+           width:100%;
+           height:100%;
+           object-fit: cover;
+           
+       }
+        #emailId {
+           border-radius: 20px;
+           padding:5px;
+           font-weight: bolder; 
+           
+        }
+        #sendId {
+            background-color: orange;
+            /* position:absolute; */
+            /* width: 30%; */
+            /* left: 60%; */
+            /* height:100%; */
+            border-radius: 20px;
+            padding: 5px 20px;
+            font-weight: bolder; 
+        }
+        p,h2,label,input {
+         color: white;
+        }
+        .contactIcon {
+            width:4%;
+            background-color: orange;
+        }
+        .twitImg {
+            width:35%;
+            background-color: white;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="mainContainer">
+            <div class=" box aboutUs">
+                <h2>About Us</h2>
+                <p>There are many variations of passages of Lorem Ipsum available, 
+                   but the majority have suffered alteration in some form, by injected humour, 
+                   or randomised words which don't look even slightly believable.
+                   If you are going to use a passage of Lorem Ipsum, you need to be sure there 
+                   isn't anything embarrassing hidden in the middle of text.</p>
+                <br></br>
+               <p>
+                    
+                    <img class="contactIcon" src="/CS315WAP/images/phone.png"> &nbsp
+                    <label>+1 291 3912 329</label>
+                </p>
+                <p>
+                    <a><img class="contactIcon"src="/CS315WAP/images/mail.png" ></a> &nbsp
+                    <a href="mailto:info@gmail.com" style="color:white">info@gmail.com</a>
+                </p>
+                <div class="sendBox">
+                    <label id="emailId">Enter your e-mail</label>
+                    <input id="sendId"type="button" value="send">
+                </div>
+            </div>
+            <div class=" box latestTweet">
+                <h2>Latest Tweet</h2>
+                <div class = "tweets">
+                <p>
+                    <img class="twitImg" src="/CS315WAP/images/twitter.png">
+                </p>
+                <p>There are many variations of passages of Lorem Ipsum available, 
+                    but the majority have suffered alteration in some form, by injected humour, 
+                    or randomised words which don't look even slightly believable.
+                </p>
+                <p>
+                    <img class="twitImg" src="/CS315WAP/images/twitter.png">
+                </p>
+                <p>There are many variations of passages of Lorem Ipsum available, 
+                    but the majority have suffered alteration in some form, by injected humour, 
+                    or randomised words which don't look even slightly believable.
+                </p>
+                <p>
+                    <img class="twitImg" src="/CS315WAP/images/twitter.png">
+                </p>
+                <p>There are many variations of passages of Lorem Ipsum available, 
+                    but the majority have suffered alteration in some form, by injected humour, 
+                    or randomised words which don't look even slightly believable.
+                </p>
+                </div>
+             </div>
+            <div class="box instagram">
+                <h2>Instagram</h2>
+                <div class = "instagramImages">
+                    <img class="image"src="/CS315WAP/images/grid1.PNG">
+                    <img class="image"src="/CS315WAP/images/grid2.PNG">
+                    <img class="image"src="/CS315WAP/images/grid3.PNG">
+                    <img class="image"src="/CS315WAP/images/grid4.PNG">
+
+                </div>
+            </div>
+          
+            <div class="box bottomBar">
+                <div class="flexBox">
+                <p style="font-weight:bolder">Home</p>
+                <p style="font-weight:bolder">About</p>
+                <p style="font-weight:bolder">Our works</p>
+                <p style="font-weight:bolder">Services</p>
+                <p style="font-weight:bolder">Blog</p>
+                <p style="font-weight:bolder">Contacts</p>
+                </div>
+                <p id="colorlibId">Colorlib</p>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
