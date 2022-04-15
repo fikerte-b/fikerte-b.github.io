@@ -34,19 +34,39 @@
    
 })()
     </script>
+    <!-- <script>
+        window.addEventListener('load', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.entries().length==0)
+                return;
+            document.getElementsByName('email')[0].value = urlParams.get('email');
+            document.getElementsByName("lname")[0].value =  urlParams.get('lname');
+            if(urlParams.get('select').length==0)
+                return;
+            for(let eachOption of document.getElementsByName("select")[0].options){
+                if(urlParams.get('select').split(",").includes(eachOption.value))
+                    eachOption.selected= true;
+                else
+                    eachOption.selected= false;
+            }
+        });
+    </script> -->
 </head>
 <body>
-    <form class="p-5 needs-validation">
+    <div class="container">
+    <form class="p-5 needs-validation"
+          method="get" action="reviewPage.html"
+    >
         <div class="row mb-5  border-top border-5 border-warning">
            <p class="h1 text-capitalize" style="text-align: center;">responsive registration form</p>
         </div> 
         <div class="input-group mb-5">
-            <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+            <span class="input-group-text" id="email-addon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
                 <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 
                 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
               </svg></span>
-            <input type="text" class="form-control" id="basic-addon1" placeholder="Email" aria-label="Email" required>
-            <div class="invalid-feedback">
+            <input type="text" class="form-control" name="email" aria-describedby="email-addon" placeholder="Email" required>
+            <div id="email-addon" class="invalid-feedback">
                 Please enter a valid email address
             </div>
           </div>
@@ -54,7 +74,7 @@
             <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
                 <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
               </svg></span>
-            <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+            <input type="text" class="form-control" placeholder="Password" name="password" aria-label="Password" aria-describedby="basic-addon1" required>
             <div class="invalid-feedback">
                 Please enter a valid password
             </div>
@@ -65,7 +85,7 @@
               </svg></span>
             <input type="text" class="form-control" placeholder="Re-type Password" aria-label="Re-type Password" aria-describedby="basic-addon1" required>
             <div class="invalid-feedback">
-                Please enter a valid password
+                Please enter password that matches
             </div>
         </div>
         <div class="row mt-5">
@@ -75,7 +95,7 @@
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                       </svg>
                 </span>
-                <input name="fname" type="text" class="form-control" placeholder="First Name" required>
+                <input name="fName" type="text" class="form-control" placeholder="First Name" required>
                 <div class="invalid-feedback">
                     Please enter your first name
                 </div>
@@ -87,7 +107,7 @@
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                       </svg>
                 </span>
-                <input name="lname" type="text" class="form-control" placeholder="Last Name" required>
+                <input name="lName" type="text" class="form-control" placeholder="Last Name" required>
                 <div class="invalid-feedback">
                     Please enter your last name
                 </div>
@@ -117,7 +137,7 @@
             </div>
         </div>
         <div class="form-check mt-5">
-            <input class="form-check-input" type="checkbox" id="termsId" value="I agree to the Terms and Conditions" required>
+            <input class="form-check-input" type="checkbox" name="terms" id="termsId" value="I agree to the Terms and Conditions" required>
             <label class="form-check-label" for="terms" >I agree with the terms and conditions</label>
             <div class="invalid-feedback">
                 You must agree to the terms and conditions.
@@ -125,7 +145,7 @@
         </div>
 
         <div class="form-check mt-5">
-            <input class="form-check-input" type="checkbox" id="newsletterId" value="I want to receive the newsletter" required>
+            <input class="form-check-input" type="checkbox" name="newsletter" id="newsletterId" value="I want to receive the newsletter" required>
             <label for="newsletter" class="form-check-label">I want to receive newsletter</label>
             <div class="invalid-feedback">
                 You must agree to receive newsletter.
@@ -136,5 +156,6 @@
             <button class="btn btn-warning" type="submit">Register</button>
         </div>
     </form>
+</div>
 </body>
 </html>
