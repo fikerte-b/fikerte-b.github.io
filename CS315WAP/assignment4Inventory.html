@@ -1,49 +1,56 @@
-<!DOCTYPE html>
-<html lang="eng">
+
+<html>
     <head>
-        <title> Document Inventory</title>
-        <link rel="stylesheet" href="dom.css">
-        <script src="assignment4Inventory.js"></script>
+      <title>Inventory</title>
+      <script src="./assignment4Inventory.js"></script>
     </head>
     <body>
-        <p>Item Name:</p>
-        <input id="name" type="text">
-        <p>Item Category:</p>
-        <input id="category" type="text">
-        <p>Quantity:</p>
-        <input id="qty" type="text">
-        <p>Price:</p>
-        <input id="price" type=""text>
-        <p>Ratings:</p>
-        <input id="rate" type="text">
-
-        <div>
-            <button onclick="myInventoryFn()">Add</button>
-        </div>
-        <br/>
-        <select name="mySort" id="sortId">
-            <option value="Name">Name</option>
-            <option selected value="Original">Original</option>
-            <option value="Price">Price</option>
-        </select>
-        <div>
-            <button onclick="mySorterFn()">Add</button>
-        </div>
-        <input type="button" value="sort" id="sorter"/><br /><br />
-        <select name="myFilter" id="filterId">
-            <option value="Quantity > 100">Quantity Over 100</option>
-            <option value="Rating > 4">Rating Above 4</option>
-            <option>No Filter</option>
-        </select>
-        <input type="button" value="filter" id="filterer" /><br /><br />
-        <table border="4" id="tableId">
-          <tr class="row">
-              <th class="column1">Product Name</th>
-              <th class="column2">Category</th>
-              <th class="column3">Quantity</th>
-              <th class="column4">Price</th>
-              <th class="column5">Ratings</th>
-          </tr> 
-        </table>   
+      <form name="myform">
+        <br />
+        <div>Item Name:</div>
+        <input type="text" id="itemField" name="itemField" />
+        <br />
+        <div>Item Category:</div>
+        <input type="text" id="categoryField" name="categoryField" />
+        <br />
+        <div>Quantity:</div>
+        <input type="text" id="quantityField" name="quantityField" /> <br />
+        <br />
+        <div>Ratings:</div>
+        <input type="text" id="ratingsField" name="ratingsField" /> <br />
+        <br />
+        <div>Price:</div>
+        <input type="text" id="priceField" name="priceField" /> <br />
+      </form>
+  
+      <div>
+        <pre>        <input type = "button" value ="Add" id="addbtn" > </pre>
+      </div>
+      <br />
+      <select name="mySort" id="sele">
+        <option value="Name">Name</option>
+        <option selected value="default">default</option>
+  
+        <option value="Price">Price</option>
+      </select>
+  
+      <input type="button" value="sort" id="sorter" /><br /><br />
+      <select name="myFilter" id="seleFilter">
+        <option value="Quantity >100">Quantity100</option>
+        <option value="Rating >4">Rating4</option>
+        <option>none</option>
+      </select>
+      <input type="button" value="filter" id="filterer" /><br /><br />
+      <table border="1" id="myTable">
+        <tr>
+          <td>Product Name</td>
+          <td>Catagory</td>
+          <td>Quantity</td>
+          <td>Ratings</td>
+          <td>Price</td>
+          <td>Remove</td>
+        </tr>
+      </table>
     </body>
-</html>
+  </html>
+  
