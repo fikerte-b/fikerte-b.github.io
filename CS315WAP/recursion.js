@@ -74,11 +74,12 @@ let list = {
         console.log(node.name +":"+ node.value);
     }
     else{
+      console.log(`${node.name} : ${node.value}`); 
         for(let child of node.children){
             
             printNode(child);
            }
-           console.log(`${node.name} : ${node.value}`); 
+           
     }
   }
   function printNodeLoop(node){
