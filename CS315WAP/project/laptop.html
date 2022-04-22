@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ 
+<head> 
+    <meta charset="UTF-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Selected Page</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" /> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
+        
+     <style> 
+     
+        .productContainer {
+            display: flex;
+            padding: 20px;
+            gap: 30px;
+        }
+
+       .myClass {
+            margin-bottom: 30px;
+            margin-left: 650px;
+        } 
+        #imgId {
+            height: 500px;
+        }
+      
+    </style> 
+<script>
+    $(function () {
+     $("#header").load("header.html");
+
+      $("#footer").load("footer.html");
+    });
+  </script>
+<script src="product.js"></script>
+</head> 
+<body> 
+    
+
+<div class="position-sticky top-0" style="z-index: 4;" id="header"></div>
+    <div class="productContainer">
+        <div>
+            <img id="imgId" src="./projectImages/laptop4.jpg" width="400px" />
+        </div>
+        <div>
+            <p>Price: $258 - $1725</p>
+
+            <p>Electronics</p>
+
+            <p>Size:15', 25', 27'</p>
+
+            <p>Samsung</p>
+
+            <p>CD taker:none</p>
+
+            <p>SAMSUNG 15.6” Galaxy Laptop Computer, i7 / 16GB / 512GB, <br>
+
+                12th Gen Intel Core Processor, Lightweight, 2022 Model",</p>
+
+            <p>The Galaxy Book2 Pro series features the latest 12th Gen <br>
+
+                Intel Core processors. The Galaxy Book2 Pro series <br>
+
+                features 1080p FHD webcams and wider field of view angles</p>
+        </div>
+    </div>
+    <div style="text-align:end;">
+        <button style="background-color: orange; width:100px; border-radius: 5px; margin-left: 300px;" onclick="addToCart()"> Add to Cart</button>
+         <a href="shoppingCart.html"><button class="btn btn-warning myClass" style="margin-right:100px;">Preceed to CheckOut</button></a>
+     <div id="footer"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .dropdown-item:hover {
+            background-color: lightskyblue;
+        }
+
+        .mySign:hover {
+            border-color: white;
+            text-size-adjust: 10px;
+        }
+
+        .card-body:hover {
+            color: red;
+        }
+
+        #iddd {
+            display: none;
+
+            top: 0;
+
+            overflow: auto;
+
+            margin-left: 50px;
+            margin-top: 80px;
+        }
+
+        .pos {
+            display: grid;
+            grid-template-columns: 14% 13% 50% 5% 9% 7%;
+            background-color: black;
+            text-decoration: white;
+            max-width: 2300;
+            height: 90px;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        .language {
+            padding-left: 20px;
+            margin-right: 100px;
+        }
+
+        .proList {
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            text-decoration: white;
+
+
+
+        }
+
+        .withHead {
+            display: grid;
+            grid-template-columns: 1fr;
+            position: relative;
+        }
+
+        .filterSort {
+            display: grid;
+            margin-top: 20px;
+            align-items: start;
+            grid-template-columns: 1fr;
+
+
+        }
+
+        .containerPro {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 5px;
+            gap: 5px;
+        }
+
+        .myLogo:hover {
+            border-color: white;
+        }
+
+        #location:hover {
+            border: 1px solid black !important;
+        }
+
+        .card-img-top {
+            height: 400px;
+        }
+
+        #cards {
+            text-decoration: none !important;
+        }
+    </style>
+    <script>
+        $(function () {
+         $("#header").load("header.html");
+    
+          $("#footer").load("footer.html");
+        });
+      </script>
+    <script src="product.js"></script>
+    
+</head>
+
+<body>
+    <div class="position-sticky top-0" style="z-index: 4;" id="header"></div>
+    <div id="drop" style="margin: 10px;">
+
+        <div class="dropdown" style="float: right;">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort by:
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#"><button type="button" id="lowhigh" onclick="sortLowHigh()">Price: Low to High</button></a></li>
+        
+            <li><a class="dropdown-item" href="#"><button type="button" id="highlow" onclick="sortHighLow()">Price: High to Low</button></a></li>
+          </ul>
+        </div> 
+        
+        </div>
+    
+    <div class="proList" style="margin-top: 50px;">
+        <div class="filterSort">
+
+            <div>
+                <h6 style="margin-left: 20px; padding-bottom:10px">Customer Review</h6>
+
+                <div class="mx-3">
+                    <p>
+                        <label onclick="filterInRange4()">⭐⭐⭐⭐✩ & up</label>
+                    </p>
+                    <p>
+                        <label onclick="filterInRange3()">⭐⭐⭐✩✩ & up</label>
+                    </p>
+                    <p>
+                        <label onclick="filterInRange2()">⭐⭐✩✩✩ & up</label>
+                    </p>
+                    <p>
+                        <label onclick="filterInRange1()">⭐✩✩✩✩ & up</label>
+                    </p>
+                </div>
+
+                <div>
+                    <h6 style="margin-left: 20px; margin-top:80px;">Brands</h6>
+
+                    <div> <a class="dropdown-item btn-sm" href="#"><input name="sort2" type="checkbox" value="" />
+                            DKNY
+                        </a>
+                    </div>
+                    <div> <a class=" dropdown-item btn-sm" href="#"><input name="sort3" type="checkbox" value="" />
+                            Apple</a></div>
+                    <div> <a class=" dropdown-item btn-sm" href="#"><input name="sort3" type="checkbox" value="" />
+                            Skeachers</a> </div>
+                </div>
+                <div>
+
+                    <h6 style="margin-left: 20px; margin-top:80px;"> Price</h6>
+                    <div> <a class="dropdown-item btn-sm" href="#"><input name="sort1" type="button"
+                                value="Under $100" /> </a></div>
+                    <div> <a class="dropdown-item btn-sm" href="#"><input name="sort2" type="button"
+                                value="$100 to $200" /></a></div>
+                    <div> <a class="dropdown-item btn-sm" href="#"><input name="sort2" type="button"
+                                value="$200 & Above" /></a></div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="productList">
+            <div id="cards" class="containerPro mt-3"> </div>
+        </div>
+    </div>
+    
+
+    <div id="footer"></div>
+</body>
+
+</html>

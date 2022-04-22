@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <link rel="stylesheet" href="myStyle.css"> -->
+    
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+
+  <style>
+    input{
+      width:60%;
+      height:30px;
+    }
+    .main{
+       display: grid;
+       gap:10px;
+       padding: 15px;
+    }
+    .addButton{
+      width:80px;
+      height:30px;
+      background-color: rgb(13, 114, 114);
+      justify-self: center;
+      border-radius: 3px;
+      color: white;
+    }
+    .filter{
+      width:100px;
+      height:40px;
+      border-radius: 5px;
+      
+       
+    }
+    
+    th,td{
+        border:1px solid black;
+        padding:20px;
+       
+    }
+    table{
+        border-collapse: collapse;
+        width:80%;
+        background-color: rgb(13, 114, 114);
+        color: white;
+        margin-left: 20px;
+    }
+    
+  </style>
+  <script>
+    $(function () {
+        $("#header").load("header2.html")
+
+        $("#footer").load("footer.html");
+      });
+  </script>
+</head>
+
+
+<body>
+  <div class="position-sticky top-0" style="background-color: rgb(34, 32, 32);height: 70px;padding: 10px;" id="header">
+         
+  </div>
+    
+  <!-- <div style=>
+   
+    <link rel="stylesheet" href="header.html">
+    
+  </div> -->
+  <h1 style="text-align: center;">Inventory</h1>
+  <div class="main">
+    <p>
+      <b>Item Name:</b>  &nbsp; &nbsp; 
+      <input type="text" value="" id="itemName" />
+    </p>
+    <p>
+      <b>Item Category:</b> 
+      <input type="text" value="" id="category" />
+    </p>
+    <p>
+      <b>Quantity:</b> &nbsp; &nbsp;&nbsp; &nbsp; 
+      <input type="text" value="" id="quantity" />
+    </p>
+    <p>
+     <b> Ratings:</b> &nbsp; &nbsp;&nbsp; &nbsp; 
+      <input type="text" value="" id="ratings" />
+    </p>
+    <p>
+     <b> Brand:</b> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+      <input type="text" value="" id="brand" />
+    </p>
+    <p>
+      <b>ID:</b> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" value="" id="id" />
+    </p>
+    <p>
+      <b>Description:</b> &nbsp; &nbsp;
+      <input type="text" value="" id="description" />
+    </p>
+    <p>
+       <b>Price:</b> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" value="" id="price" />
+    </p>
+    <label id="mode" hidden></label>
+    <button class="addButton" onclick="add()">Add</button>
+     <p class="buttons"> 
+         <button class="filter" onclick="filter()" >Filter</button>
+         <button class="filter" onclick="clearFilter()">Clear Filter</button></p>
+    <br />
+  </div>
+  <table id="items">
+    <tr>
+      <th>Product Name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Ratings</th>
+      <th>Brand</th>
+      <th>ID</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      
+    </tr>
+  </table>
+
+  <script>
+    var array = [];
+    var index = 0;
+    var idsOfInputs = ["itemName", "category", "quantity","ratings","brand","id","description","price"];
+
+    function createEditButton(){
+      let editTd = document.createElement("td");
+      let button = document.createElement("button");
+      button.innerHTML = "Edit";
+      button.setAttribute("myId", index);
+      button.onclick = function () {
+        //this -> button, this.parentNode->td,this.parentNode.parentNode->tr 
+        let childNodes = this.parentNode.parentNode.childNodes;
+        this.parentNode.parentNode.setAttribute("editing","true");
+        for (let i = 0;i<=2;i++) {
+          document.getElementById(idsOfInputs[i]).value= childNodes[i].innerHTML
+        }
+        document.getElementById("mode").value = "Edit";
+        let myId = this.getAttribute("myId");
+        array.forEach(function (item) {
+          if (item.id == myId) {
+            item.name = document.getElementById("itemName").value;
+            item.category = document.getElementById("category").value;
+            item.quantity = document.getElementById("quantity").value;
+            item.ratings=document.getElementById("ratings").value;
+            item.brand=document.getElementById("id").value;
+            item.description=document.getElementById("description").value;
+            item.price=document.getElementById("price").value;
+          }
+        })
+
+      }
+      editTd.append(button);
+      return editTd;
+    }
+    function createDeleteButton(){
+      let td = document.createElement("td");
+      let deleteButton = document.createElement("button");
+      deleteButton.setAttribute("myId", index);
+      deleteButton.innerHTML = "Delete";
+      deleteButton.onclick = function () {
+        document.getElementById("mode").value = "";
+        let myId = this.getAttribute("myId")
+        console.log(this.getAttribute("myId"));
+        array = array.filter((item) => item.id != myId);
+        console.log(this.parentNode.parentNode);
+        this.parentNode.parentNode.remove();
+      }
+      td.append(deleteButton);
+      return td;
+    }
+    function add() {
+      let items = document.getElementById("items");
+
+      if (document.getElementById("mode").value == "Edit") {
+        document.getElementById("mode").value=""
+        let editTr = getEditedRow().childNodes;
+        for (let i = 0;i<=2;i++) {
+          editTr[i].innerHTML = document.getElementById(idsOfInputs[i]).value;
+        }
+      } else {
+        index++;
+        var item = {
+          id: index, name: document.getElementById("itemName").value,
+          category: document.getElementById("category").value,
+          quantity: document.getElementById("quantity").value,
+          ratings:document.getElementById("ratings").value,
+          brand:document.getElementById("brand").value,
+          id:document.getElementById("id").value,
+          description:document.getElementById("description").value,
+          price:document.getElementById("price").value
+
+        };
+        array.push(item);
+        let tr = document.createElement("tr");
+        for (let eachInput of idsOfInputs) {
+          
+          items.append(tr);
+          let td = document.createElement("td");
+          td.innerHTML = document.getElementById(eachInput).value;
+          tr.append(td);
+        }
+        tr.append(createEditButton());
+        tr.append(createDeleteButton());
+      }
+    }
+
+    function filter() {
+      document.getElementById("mode").value = "";
+      console.log(array);
+      let filteredArray = array.filter((item) => Number(item.quantity) > 100);
+      let children = document.getElementById('items').childNodes;
+      for (let i = 2; i < children.length; i++) {
+        let eachTr = children[i];
+        console.log(eachTr.children[2]);
+        if (Number(eachTr.children[2].innerHTML) < 100) {
+          eachTr.style.display = "none";
+        }
+      }
+    }
+
+    function getEditedRow(){
+      let children = document.getElementById('items').childNodes;
+      for (let i = 2; i < children.length; i++) {
+        let eachTr = children[i];
+        if(eachTr.getAttribute("editing")==="true"){
+          eachTr.setAttribute("editing","");
+          return eachTr;
+        }
+      }
+    }
+
+    function clearFilter() {
+      document.getElementById("mode").value = "";
+      console.log(array);
+      let filteredArray = array.filter((item) => Number(item.quantity) > 100);
+      let children = document.getElementById('items').childNodes;
+      for (let i = 2; i < children.length; i++) {
+        let eachTr = children[i];
+        console.log(eachTr.children[2]);
+        eachTr.style.display = "";
+      }
+
+    }
+  </script>
+</body>
+
+</html>

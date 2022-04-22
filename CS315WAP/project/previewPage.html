@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myClass {
+            width: 500px;
+            background-color: bisque;
+            padding: 50px;
+        }
+        h2 {
+        text-align: center;
+        padding-bottom: 25px;
+        }
+    </style>
+</head>
+   <body>
+
+       <div class="myClass" style="border:5px solid gainsboro">
+            <h2>Preview Page</h2>
+            <label>Email: </label>
+            <hr>
+            <label>Password: </label>
+            <hr>
+            <label>First Name: </label>
+            <hr>
+            <label>Last Name: </label>
+            <hr>
+            <label>Gender: </label>
+            <hr>
+            <label>Country: </label>
+            <hr>
+            <label>Terms and Conditions: </label>
+            <hr>
+            <label>Newsletter: </label>
+            <hr>
+            <br>
+            <div>
+                <button onclick="edit()">Edit</button>
+                <button onclick="save()">Save</button>
+            </div>
+            <div>
+           <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            let label1 = document.getElementsByTagName("label")[0];
+            //alert(label1.innerHTML);
+            label1.innerHTML= label1.innerHTML +"  " + urlParams.get('email');
+    
+            let label2 = document.getElementsByTagName("label")[1];
+            label2.innerHTML= label2.innerHTML +"  " + urlParams.get('password');
+
+            let label3 = document.getElementsByTagName("label")[2];
+            label3.innerHTML = label3.innerHTML +"  " +urlParams.get('fName');
+    
+            let label4 = document.getElementsByTagName("label")[3];
+           // alert(label4.innerHTML);
+            label4.innerHTML= label4.innerHTML + " " + urlParams.get('lName');
+
+    
+            let label5 = document.getElementsByTagName("label")[4];
+            label5.innerHTML= label5.innerHTML +"  " + urlParams.get('gender');
+            //alert(label5.innerHTML);
+    
+            let label6 = document.getElementsByTagName("label")[5];
+            label6.innerHTML= label6.innerHTML +"  " + urlParams.get('selection');
+    
+            let label7 = document.getElementsByTagName("label")[6];
+            label7.innerHTML= label7.innerHTML +"  " + urlParams.get('terms');
+    
+            let label8 = document.getElementsByTagName("label")[7];
+            label8.innerHTML= label8.innerHTML +":  " + urlParams.get('newsletter');
+               
+             function edit(){
+                 window.location.href= 
+                 "userRegistration.html" + window.location.search;
+    
+             }  
+        //      function edit(){
+        //      window.location.href= 
+        //      "registerPage.html" + window.location.search;
+        //  }  
+             function save(){
+                 alert("Thank you");
+             }
+               </script>
+    </body>
+</html>

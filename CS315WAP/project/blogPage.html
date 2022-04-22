@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    
+    <style>
+       
+       #bigDiv {
+           width:500px solid;
+           height: 500px solid;
+           margin-top:50px;
+           margin-left:30px;
+           margin-right:30px;
+           border-top: 15px solid lightgrey;
+           border-left: 15px solid lightgrey;
+           border-right: 15px solid lightgrey;
+           border-bottom: 8px solid lightgrey;
+           display: flow-root;
+               
+       }
+        #leftMainId {
+            float:left;
+            width: 65%;
+            padding-left: 10px;       
+        }
+
+        #rightMainId {
+            float: right;
+            width:25%;
+            border-left: 15px solid lightgrey;
+         
+        }
+
+         span, #one {
+            font-weight: bold;
+        } 
+        .mainClass {
+            padding-top: 30px;
+            margin-left: 40px;
+            color:hotpink;
+        }
+
+        body {
+            
+            background-color:rgb(208, 189, 189); 
+        }
+
+        .myClass { 
+            font-size:smaller;
+            font-weight: lighter;
+
+        }
+        .rightId {
+           border-bottom:8px solid lightgrey; 
+        }
+        .line {
+            border: 2px solid;
+        }
+        .myLabel{
+            margin-left: 150px;
+        }
+        .myButton {
+            background-color: lightskyblue;
+        }
+        .imageDiv {
+            box-sizing: border-box;
+            margin-bottom: 60px;
+            /* border-top:8px solid lightgrey;  */
+
+        }
+        
+        img {
+            width: 250px;
+            height: 150px;
+            object-fit:cover;
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainClass" >
+        <div id="one" style="float:left">Bidhan Tech Blog<br>
+            <span class="myClass">An Example Technology Blog</span>
+        </div>
+        <div id="two">
+            <label class="myLabel">HOME</label>
+            <label class="myLabel">RECENT POSTS</label>
+            <label class="myLabel">BLOG</label>
+            <label class="myLabel">ABOUT ME</label>
+            <label class="myLabel">CONTACT ME</label>
+        </div>
+    </div>
+    <div id="bigDiv">
+        <div id="leftMainId">
+            <div class="imageDiv">
+                <h3>An Example Post #3</h3>
+                <pre>By: Example Author Name   Date: May 8, 2020 Catagories: Nature</pre>
+                <img src="/CS315WAP/images/sunset.jpg" alt="Sunset" >
+                <p>Hello Everyone, an example post is a post which is used to display an example post.
+                   An Example post is created to display an example post. Why are you reading this post?
+                   Hello Everyone, an example post is a post which is used to display an example post.
+                   An Example post is created to display...
+                </p>
+                <button class="myButton">Read More...</button>
+               
+             
+            </div>
+            <div class="imageDiv">
+                <h3>An Example Post #2</h3>
+                <pre>By: Example Author Name   Date: May 7, 2020 Catagories: Blog Post</pre>
+                <p>Hello Everyone, an example post is a post which is used to display an example post.
+                    An Example post is created to display an example post. Why are you reading this post?
+                    Hello Everyone, an example post is a post which is used to display an example post.
+                    An Example post is created to display...
+                 </p>
+                 <button class="myButton">Read More...</button>
+            </div>
+            <div class="imageDiv">
+                <h3>An Example Post #1</h3>
+                <pre>By: Example Author Name   Date: May 6, 2020 Catagories: Blog Post</pre>
+                <img src="./images/sunset.jpg" alt="Sunset" >
+                <p>Hello Everyone, an example post is a post which is used to display an example post.
+                   An Example post is created to display an example post. Why are you reading this post?
+                   Hello Everyone, an example post is a post which is used to display an example post.
+                   An Example post is created to display...
+                </p>
+                 <button class="myButton">Read More...</button>
+            </div>
+        </div>
+        <div id="rightMainId">
+            <div class="rightId"> <span styel="bold">Search</span>
+                <div class="line"></div> </br>
+                <div>
+                    <label>Search for:</label>
+                    <input type="text" placeholder="Search...">
+                    <button>Search</button>
+                </div> </br>
+                
+            </div>
+            <div class="rightId"> <span>Recent Posts</span>
+                <div class="line"></div>
+                <p>An example Post#3</p>
+                <p>An example Post#2</p>
+                <p>An example Post#1</p>
+                <p>An example Post#0</p>
+            </div>
+            <div class="rightId"><span>Pages</span>
+                <div class="line"></div>
+                <p>About Me</p>
+                <p>Contact Me</p>
+                <p>Cockies & Privacy Policy</p>
+                <p>Terms & Conditions</p>
+            </div>
+            <div class="rightId"><span>Categories</span>
+                <div class="line"></div>
+                <p>Blog Post</p>
+                <p>Example Post</p>
+                <p>Nature</p>
+            </div>
+            <div class="rightId"><span>Recent Posts</span>
+                <div class="line"></div>
+                <p>An example Post#3</p>
+                <p>An example Post#2</p>
+                <p>An example Post#1</p>     
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -5,55 +5,153 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+   </script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+   </script>
     <style>
-        .logImg {
-            width:100px
+        img {
+            width:800px;
+            height:90px;
+            object-fit: contain;
         }
-        .log {
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            /* flex-direction: column; */
-            margin:10px;
-            width:500px;
-            height: 700px;
-            border: 3px solid pink ;
-            padding: 20px;
+        body{
+         margin: 25px;
+        background-image: url(./projectImages/cart.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
         }
-        .box {
-            margin-bottom: 20px;
-            font-weight: bolder;
-            font-size: larger;
-        }
-        .welcome{
-         
-            margin-bottom: 70px;
-        }
+       .container{
+        /* display:grid; */
+        grid-template-columns: 1fr 2fr;
+        width: 500px;
+        margin:auto;
+       }
+       .formClass {
+           padding-top: 250px;
+           text-align: left;
+           margin-left: 20px;
+       }
+       #signId  {
+           /* font-family: 'Courier New', Courier, monospace; */
+           font-weight: bolder;
+           color:hsl(39, 96%, 52%); 
+           /* border-radius: 25px; */
+           background-color: black;
+           padding: 10px;
+       }
     </style>
+    <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+    'use strict'
+    window.addEventListener('load', function () {
+   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+   // Loop over them and prevent submission
+   Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
+          event.stopPropagation()
+        if (form.checkValidity()) {
+            console.log("ghghhg")
+            form.classList.add('was-validated')
+        }
+
+       
+      }, false)
+    })
+   }, false);
+   })()
+  
+        
+
+        let personsArray = [
+        {name:"manager", email:"manager@gmail.com", password: "Manager@00"},
+        {name:"customer", email:"customer@gmail.com", password: "Customer@00"}
+        ];
+         function login(){
+            // console.log("firstnnnn");
+            let emailValue = document.getElementById("emailId").value;
+            let passwordValue = document.getElementById("passwordId").value;
+            let person = personsArray.filter(function (item, index){
+                return emailValue == item.email && passwordValue == item.password;
+            });
+            console.log("personnn",person[0]);
+            if(person[0].name =='customer'){
+                console.log("uuuuuuuuuu");
+                window.location.href = "./mainPage.html";
+            }else if(person[0].name == 'manager'){
+                window.location.href = "./projectInventory.html";
+            }else{
+                window.location.href = "";
+            }
+        }
+    
+    </script>
 </head>
 <body>
-    <div class="main">
-    <div class="log">
-        <div class="box welcome">
-            <h1>Welcome To Amazon</h1>
-            <img class="logImg" src="/CS315WAP/images/Happy.webp">
+    <div class="container">
+       <div class="amazonImage">
+            <img src="./projectImages/amazonLogo.jpg">
         </div>
-        <div class="box emailClass">
-            <label>Email</label>
-            <input id = "emailId"type="text" placeholder="xxxx@gmail.com">
+      <div class="formClass position-absolute bottom-20 start-0">
+      <form action="" class="needs-validation" novalidate>
+        
+        <div class="box mb-3">
+            <div class="box welcome">
+                <h1 style="text-align:center">Sign in</h1>
+                <!-- <img class="logImg" src="./projectImages/amazonLogo.jpg"> -->
+            </div>
+            <label class="form-check-label fw-bold text-warning">Email</label>
+            <input class="form-control form-control-md" id ="emailId" type="text" placeholder="xxxx@gmail.com" required>
+            <div class = "invalid-feedback">
+                Please enter valid email Address.
+            </div>
         </div>
-        <div class="box passwordClass">
-            <label>Password</label>
-            <input id = "passwordId" type="text">
+        <div class="box mb-5">
+            <label class="form-check-label fw-bold text-warning">Password</label>
+            <input class="form-control form-control-md" id = "passwordId" type="password" required>
+            <div class = "invalid-feedback">
+                Please enter valid password.
+            </div>
         </div>
-        <div class="box loginButton">
-            <input type="button" value="Login">
+        <div class="d-grid mb-5">
+            <button class="btn btn-warning btn-sm"  onclick="login();">log in</button>
         </div>
         <div class="box signUp">
-            New Amazon User? 
-            <a href="../bootstrapForm/registerPage.html"> Sign Up Here</a>
+            <label id="signId">Don't have an account yet? </label>
+            <a class="fs-3" href="./userRegistration.html" style="color:orange">Create an Account</a>
         </div>
+      </form>
+      </div>
     </div>
-</div>
+    <script>
+        //  let personsArray = [
+        // {name:"manager", email:"manager@gmail.com", password: "Manager@12"},
+        // {name:"customer", email:"customer@gmail.com", password: "Customer@34"}
+        // ];
+        //  function login(){
+        //     let emailValue = document.getElementById("emailId").innerHTML;
+        //     let passwordValue = document.getElementById("passwordId").innerHTML;
+        //     let person = personsArray.filter(function (item, index){
+        //         return emailValue == item.email && passwordValue == item.password;
+        //     });
+        //     if(person[0].name =='customer'){
+        //         window.location.href = "bootstrapForm/registerPage.html";
+        //     }else if(person[0].name == 'manager'){
+        //         window.location.href = "trial.html";
+        //     }else{
+        //         window.location.href = "";
+        //     }
+        // }
+    </script>
+    
 </body>
 </html>
