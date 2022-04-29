@@ -4,11 +4,12 @@ function add(){
     textOutput.value = textInput.value;
     textInput.value = "";
 }
+    
+function addition(){
     let value1 = document.getElementById("value1");
     let value2 = document.getElementById("value2")
     let data1 = Number(value1.value);
     let data2 = Number(value2.value)
-function addition(){
     let result = data1 + data2;
     //let result = Number(value1.value) + Number(value2.value);
     // let p = document.createElement("p");
@@ -19,7 +20,8 @@ function subtraction(){
     let value1 = document.getElementById("value1");
     let value2 = document.getElementById("value2")
     let result = Number(value1.value) - Number(value2.value);
-    document.getElementById("resultId").innerHTML = result;
+    let resultBox =document.getElementById("resultId");
+      resultBox.innerHTML = result;
 }
 function multiplication(){
     let value1 = document.getElementById("value1");
